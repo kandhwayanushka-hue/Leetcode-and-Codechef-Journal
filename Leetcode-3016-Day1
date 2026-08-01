@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int minimumPushes(string word) {
+        if (word.length()<=8){
+            return word.length();
+        }else if (word.length()>8 && word.length()<=16){
+            return 8+(word.lenth()*2);
+        }else if (word.length()>16 && word.length()<=24){
+            return 24+(word.lenth()*3);
+        }else{
+            and so on ....
+        }
+    }
+
+
+class Solution {
+public:
+    int minimumPushes(string word) {
+        int total=0;
+        for (int i=0;i<word.length();i++){
+            total=total+i/8+1;
+        }
+        return total;
+    }
+};
+
+
