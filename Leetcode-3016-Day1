@@ -24,4 +24,30 @@ public:
     }
 };
 
+PART-2
+
+now in this there is a repitition of the same letter so we have to find the frequency of how many times it is occuring 
+
+
+class Solution {
+public:
+    int minimumPushes(string word) {          
+        unordered_map<char, int> count;        
+        for (char c : word) {                  
+            count[c]++;                        
+        }                                      
+        vector<int> freqs;                     // line 6
+        for (auto& entry : count) {            // line 7
+            freqs.push_back(entry.second);     // line 8
+        }                                      // line 9
+        sort(freqs.rbegin(), freqs.rend());    // line 10
+
+        int total = 0;                         // line 11
+        for (int i = 0; i < freqs.size(); i++) { // line 12
+            total += freqs[i] * (i / 8 + 1);   // line 13
+        }                                      // line 14
+        return total;                          // line 15
+    }
+};
+
 
