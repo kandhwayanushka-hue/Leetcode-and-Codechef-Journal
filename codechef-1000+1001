@@ -1,0 +1,67 @@
+learnings : 
+in string just initilize by writing string s;
+and then cin by just s 
+and for every character we write char ch =s[i]
+then they are counting the consecutive consonant by if vowel comes then the count initilizes to 0 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        string s;
+        cin >> n >> s;
+        int cons = 0;
+        bool hard = false;
+        for (int i = 0; i < n; i++) {
+            char c = s[i];
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+                cons = 0;
+            else
+                cons++;
+            if (cons >= 4) hard = true;
+        }
+        cout << (hard ? "NO" : "YES") << endl;
+    }
+    return 0;
+}
+
+
+
+
+
+
+in question -10001
+
+  learnings:
+result is in form of string so the string is initilized by ""
+  then we know we can concatenate in string so we use +
+  then array direct input inside the loop there only subtract it and see if it can further proceed or not if yes then add in the result array 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        cin >> n >> k;
+        string result = "";
+        for (int i = 0; i < n; i++) {
+            int a;
+            cin >> a;
+            if (a <= k) {
+                k -= a;
+                result += '1';
+            } else {
+                result += '0';
+            }
+        }
+        cout << result << endl;
+    }
+    return 0;
+}
+  
