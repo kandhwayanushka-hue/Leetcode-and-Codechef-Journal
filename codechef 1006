@@ -1,0 +1,60 @@
+learnings :
+in ternary operator thwe cout is written before the statement 
+you had taken wrong cases think of it like if its not equal then it must be either greater or smalller 
+
+
+
+*\#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	 int t;
+	 cin>>t;
+	 while (t--){
+	     int d1,t1,dm1;
+	     cin>>d1>>t1>>dm1;
+	     int d2,t2,dm2;
+	     cin>>d2>>t2>>dm2;
+	     if (d1+t1+dm1==d2+t2+dm2){
+	         if (d1>d2)?cout<<"Dragon":cout<<"sloth";
+	         else if (d1==d2){
+	             if (t1>t2)?cout<<"Dragon":cout<<"sloth";
+	         }else if (t1==t2){
+	              if (dm1>dm2)?cout<<"Dragon":cout<<"sloth";
+	         }else{
+	             cout<<"tied"<<endl;
+	         }
+	     }
+	 }
+	 return 0;
+}
+
+/*
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int d1, t1, dm1;
+        cin >> d1 >> t1 >> dm1;
+        int d2, t2, dm2;
+        cin >> d2 >> t2 >> dm2;
+
+        int total1 = d1 + t1 + dm1;
+        int total2 = d2 + t2 + dm2;
+
+        if (total1 != total2) {
+            cout << (total1 > total2 ? "Dragon" : "Sloth") << endl;
+        } else if (d1 != d2) {
+            cout << (d1 > d2 ? "Dragon" : "Sloth") << endl;
+        } else if (t1 != t2) {
+            cout << (t1 > t2 ? "Dragon" : "Sloth") << endl;
+        } else {
+            cout << "Tie" << endl;
+        }
+    }
+    return 0;
+}
