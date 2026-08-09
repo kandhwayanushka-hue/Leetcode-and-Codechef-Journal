@@ -1,0 +1,35 @@
+Q1 class Solution {
+public:
+    double minPrice(vector<int>& prices, vector<int>& discounts) {
+        int n=prices.size();
+        sort(discounts.rbegin(),discounts.rend());
+        sort(prices.rbegin(),prices.rend());
+        double sum=0;
+        for (int i=0;i<prices.size();i++){
+            for (int j=0;j<discounts.size();j++){
+              sum+=(prices[i]*(100-discounts[j]))/100;
+            }
+        }
+        return sum;
+    }
+};©leetcode
+
+class Solution {
+public:
+    double minPrice(vector<int>& prices, vector<int>& discounts) {
+        int n = prices.size(), m = discounts.size();
+        sort(prices.rbegin(), prices.rend());      // biggest price first
+        sort(discounts.rbegin(), discounts.rend()); // biggest discount first
+
+        double sum = 0;
+        int k = min(n, m);                // discounts we can actually use
+        for (int i = 0; i < n; i++) {
+            if (i < k) {                              // i-th biggest price gets i-th biggest discount
+                sum += (prices[i] * (100 - discounts[i])) / 100.0;
+            } else {                                  // ran out of discounts
+                sum += prices[i];
+            }
+        }
+        return   
+
+to seee if the  PRICES ONE HAS MORE DISCOUNTS LEFT WE WILL TAKE A MIN THAT WILL SEE WHOSE SIZE IS SMALLER ACCORDING TO IT IT WILL APPLY THE DISCOUNT IF THE K IS SMALLER THAN PRICE THEN NOW NO DISCOUNT AND MORE ELEMENET CAN BE THERE IN THE ARRAY WHERE DISCOUNTS ARE NOT APPLIED SO ADD THEM 
