@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cin >> n;
+
+        string s;
+        cin >> s;
+
+        int freq[26] = {0};
+
+        for (int i = 0; i < n; i++) {
+            int index = s[i] - 'a';   // map 'a'->0, 'b'->1, ..., 'z'->25
+            freq[index]++;
+        }
+
+        int allEven = 1;              // 1 means "yes so far"
+
+        for (int i = 0; i < 26; i++) {
+            if (freq[i] % 2 == 1) {   // found an odd count
+                allEven = 0;          // not possible to erase everything
+                break;                // no need to check further
+            }
+        }
+
+        if (allEven == 1)
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
+
+    return 0;
+}
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while (t--){
+	    int n;
+	    cin>>n;
+	    string s[n];
+	    int freq[n]={0};
+	    string result[n];
+	    for (char x:s){
+	        freq++;
+	        if (freq%2==0){
+	            continue;
+	        }else{
+	           result[i]=string[i];
+	        }
+	    }
+	    if (result.length()==0){
+	        cout<<"yes"<<endl;
+	    }else{
+	        cout<<"no"<<endl;
+	    }
+	}
+	return 0;
+}
+
