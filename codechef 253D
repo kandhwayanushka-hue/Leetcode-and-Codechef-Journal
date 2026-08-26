@@ -1,0 +1,17 @@
+Q-1 #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	int i=10;
+	while (i>0){
+	if ((i-n)>=0){
+	    cout<<i-n<<endl;
+	    break;
+	}
+	i=i+10;
+	}
+	return 0;
+}
+
